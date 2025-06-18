@@ -3,15 +3,18 @@
         <span ng-show="showExpandCollapseButtons()">
             <button class="btn btn-primary" type="button" ng-click="toggleCollapse()">
                 <span ng-show="!vm.toggleVar">
-                    <localize key="expandAll"></localize>
+                    <!--<localize key="expandAll"></localize>-->
+                    <span>Expand All</span>
                 </span>
                 <span ng-show="vm.toggleVar">
-                    <localize key="collapseAll"></localize>
+                    <!--<localize key="collapseAll"></localize>-->
+                    <span>Collapse All</span>
                 </span>
             </button>
         </span>
         <button class="btn btn-success" type="button" ng-show="vm.showTopAddButton" ng-click="add()">
-            <localize key="addItem"></localize>
+            <!--<localize key="addItem"></localize>-->
+            <span>Add Item</span>
         </button>
     </div>
 
@@ -36,7 +39,8 @@
 
         <!-- add nav items -->
         <a href="" class="umb-node-preview-add" data-nodrag ng-click="add()" prevent-default>
-            <localize key="addItem"></localize>
+            <!--<localize key="addItem"></localize>-->
+            <span>Add Item</span>
         </a>
 
     </ng-form>
@@ -59,10 +63,12 @@
                 <div class="umb-node-preview__actions">
                     <a class="umb-node-preview__action" ng-if="item.children && item.children.length > 0" data-nodrag ng-click="toggle(item)">
                         <span ng-if="collapsed">
-                            <localize key="expand"></localize>
+                            <!--<localize key="expand"></localize>-->
+                            <span>Expand</span>
                         </span>
                         <span ng-if="!collapsed">
-                            <localize key="collapse"></localize>
+                            <!--<localize key="collapse"></localize>-->
+                            <span>Collapse</span>
                         </span>
                     </a>
 
@@ -70,7 +76,8 @@
                        ng-href="{{editUrl}}"
                        data-nodrag
                        ng-click="edit(item)">
-                        <localize key="editItem"></localize>
+                        <!--<localize key="editItem"></localize>-->
+                        <span>Edit Item</span>
                         <span class="sr-only">{{item.title || item.name}}</span>
                     </a>
 
@@ -78,7 +85,8 @@
                        ng-href="{{removeUrl}}"
                        data-nodrag
                        ng-click="remove(item)">
-                        <localize key="removeItem"></localize>
+                        <!--<localize key="removeItem"></localize>-->
+                        <span>Remove Item</span>
                         <span class="sr-only">{{item.title || item.name}}</span>
                     </a>
                 </div>
