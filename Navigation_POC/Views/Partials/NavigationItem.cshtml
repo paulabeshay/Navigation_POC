@@ -1,0 +1,17 @@
+﻿@model UmbNav.Core.Models.UmbNavItem
+@using UmbNav.Core.Extensions
+@using UmbNav.Core.Models
+ 
+<li class="mega-nav__item">
+<a class="nav-link @Model.CustomClasses" href="@Model.Url()" target="@Model.Target" rel="@Model.Noopener @Model.Noreferrer">@Model.Title</a>
+ 
+    @if (Model.Children != null && Model.Children.Any())
+    {
+<ul class="mega-nav__submenu">
+            @foreach (var child in Model.Children)
+            {
+                @await Html.PartialAsync("Partials/NavigationItem", child)
+            }
+</ul>
+    }
+</li>

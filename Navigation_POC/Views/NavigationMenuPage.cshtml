@@ -1,0 +1,30 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@using UmbNav.Core.Extensions
+
+@using UmbNav.Core.Models
+ 
+@{
+
+    var navItems = Model.GetProperty("menu")?.GetValue() as System.Collections.Generic.IEnumerable<UmbNav.Core.Models.UmbNavItem>;
+
+}
+ 
+@if (navItems != null && navItems.Any())
+
+{
+<nav class="mega-nav">
+<ul class="mega-nav__list">
+
+            @foreach (var item in navItems)
+
+            {
+
+                @await Html.PartialAsync("Partials/NavigationItem", item)
+
+            }
+</ul>
+</nav>
+
+}
+ 

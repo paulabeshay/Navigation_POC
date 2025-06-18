@@ -4,6 +4,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\UmbNav\css\editor.css" />
+    <Content Include="App_Plugins\UmbNav\lang\en-us.xml" />
+    <Content Include="App_Plugins\UmbNav\views\editor.html" />
+    <Content Include="App_Plugins\UmbNav\views\settings.html" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="clean" Version="4.1.0" />
@@ -14,6 +20,25 @@
     <!-- Opt-in to app-local ICU to ensure consistent globalization APIs across different platforms -->
     <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
     <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="72.1.0.3" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="App_Plugins\UmbNav\js\angular-ui-tree.js" />
+    <None Include="App_Plugins\UmbNav\js\umbnav.controller.js" />
+    <None Include="App_Plugins\UmbNav\js\umbnav.resource.js" />
+    <None Include="App_Plugins\UmbNav\js\umbnav.settings.controller.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UmbNav.Api">
+      <HintPath>C:\Users\Paula.Soliman\Downloads\Umbnav_DeliveryAPI_Packages_Publish\Umbnav.Web Package\UmbNav.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="UmbNav.Core">
+      <HintPath>C:\Users\Paula.Soliman\Downloads\Umbnav_DeliveryAPI_Packages_Publish\Umbnav.Web Package\UmbNav.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UmbNav.Web">
+      <HintPath>C:\Users\Paula.Soliman\Downloads\Umbnav_DeliveryAPI_Packages_Publish\Umbnav.Web Package\UmbNav.Web.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <PropertyGroup>
